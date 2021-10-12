@@ -20,10 +20,11 @@ matrix1 = [2,3,4,5,6,7,8,9,10,11]
 
 
 def dotProduct(a,b):
-    dotProduct = 0
-    for x,y in zip(a,b):
-        dotProduct = dotProduct + (x*y)
-    return dotProduct
+    #dotProduct = 0
+    #for x,y in zip(a,b):
+    #    dotProduct = dotProduct + (x*y)
+    #return dotProduct
+    return a.x * b.x + a.y * b.y + a.z * b.z
 
     #print(dotProduct)
 
@@ -36,12 +37,7 @@ def dotProduct(a,b):
 # El elemento 4 sera ignorado
 
 def sumVectors(a,b):
-    sub1 = a[0] + b[0]
-    sub2 = a[1] + b[1]
-    sub3 = a[2] + b[2]
-    sub = [sub1,sub2,sub3]
-
-    return sub
+    return V3(a.x + b.x, a.y + b.y, a.z + b.z)
 
    # print(i)
 
@@ -49,12 +45,8 @@ def sumVectors(a,b):
 
 
 def subVectors(a,b):
-    sub1 = a[0] - b[0]
-    sub2 = a[1] - b[1]
-    sub3 = a[2] - b[2]
-    sub = ([sub1,sub2,sub3])
+    return V3(a.x - b.x, a.y - b.y, a.z - b.z)
 
-    return sub
     #print(sub)
 
 #subVectors(a,b)
@@ -136,6 +128,10 @@ def deg2rads(degNum):
     radNum = (degNum * 3.1415926535897932384626433)/180
     #print(radNum)
     return radNum
+
+def vectorMultiplication(v0, v1):
+  
+  return V3(v0.x * v1.x, v0.y * v1.y, v0.z * v1.z)
 
 
 def multiVecMatrix(Vector, Matrix):
@@ -344,6 +340,8 @@ def norm(v0):
 
   return V3(v0.x/v0length, v0.y/v0length, v0.z/v0length)
 
+def kMul(v0, k):
+  return V3(v0.x * k, v0.y * k, v0.z *k)
 
 
 def firstItemFunction(a):
